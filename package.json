@@ -1,0 +1,24 @@
+{
+  "name": "unicorn-plus-plus-cli",
+  "version": "0.0.1",
+  "description": "A cli for the unicorn-plus-plus package builder for cpp based on CMAKE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unicorn-plus-plus/cli.git"
+  },
+  "keywords": [
+    "cpp",
+    "package",
+    "manager"
+  ],
+  "author": "Berra Federico",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unicorn-plus-plus/cli/issues"
+  },
+  "homepage": "https://github.com/unicorn-plus-plus/cli#readme"
+}
