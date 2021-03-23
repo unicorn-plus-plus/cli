@@ -1,8 +1,12 @@
 {
   "name": "unicorn-plus-plus-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A cli for the unicorn-plus-plus package builder for cpp based on CMAKE",
-  "main": "index.js",
+  "main": "./src/cli.js",
+  "bin": {
+    "@xaberr/unicorn-plus-plus-cli": "bin/upp.js",
+    "upp": "bin/upp.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +15,11 @@
     "url": "git+https://github.com/unicorn-plus-plus/cli.git"
   },
   "keywords": [
+    "cli",
     "cpp",
+    "upp",
+    "unicorn",
+    "plus",
     "package",
     "manager"
   ],
@@ -20,5 +28,15 @@
   "bugs": {
     "url": "https://github.com/unicorn-plus-plus/cli/issues"
   },
-  "homepage": "https://github.com/unicorn-plus-plus/cli#readme"
+  "homepage": "https://github.com/unicorn-plus-plus/cli#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.2.0",
+    "exec": "^0.2.1",
+    "fs": "0.0.1-security",
+    "mkdirp": "^1.0.4",
+    "ncp": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "esm": "^3.2.18"
+  }
 }
