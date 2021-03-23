@@ -12,5 +12,5 @@ var fs = require('fs');
 program
   .version('0.0.1', '-v, --version')
   .description('cli tool for unicorn-plus-plus')
-  .command('new:standard [name]', 'create a new project', { executableFile: 'upp-new-standard' })
+  .command('new:executable [name]', 'create a new project', { executableFile: 'upp-new-executable' })
   .parse(process.argv);
