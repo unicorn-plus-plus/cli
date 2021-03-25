@@ -3,13 +3,11 @@
 var program = require('commander');
 var chalk = require('chalk');
 var exec = require('child_process').exec;
-var path = require('path');
-var ncp = require('ncp').ncp;
-var mkdirp = require('mkdirp');
 var currentPath = process.cwd();
 var fs = require('fs');
-var rimraf = require('rimraf');
 const del = require('del');
+const replace = require('replace-in-file');
+const fse = require('fs-extra');
 
 // MAIN
 program
@@ -47,17 +45,26 @@ function preProcessing() {
 
 function decompressRepo() {
   console.log(chalk.green('STEP 4: Decompressing.'));
-  ncp(currentPath + "/boilerplate-executable", currentPath + "/", function (err) {
-    if (err instanceof Error && err !== null) {
-      console.error(chalk.red(err.message));
-    } else {
-      postProcessing();
-    }
-  });
+  try {
+    fse.copySync(currentPath + "/boilerplate-executable", currentPath + "/")
+    postProcessing();
+  } catch (err) {
+    console.error(chalk.red(err.message));
+  }
 }
 
 function postProcessing() {
   console.log(chalk.green('STEP 5: Post-processing.'));
+  try {
+    replace.sync({
+      files: 'CMakeLists.txt',
+      from: "TBR_PROJECT_NAME",
+      to: project,
+    });
+  }
+  catch (error) {
+    console.error('Error occurred:', error);
+  }
   del.sync(['boilerplate-executable']);
   console.log(chalk.green('Done!'));
 }
