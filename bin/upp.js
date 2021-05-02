@@ -8,4 +8,5 @@ program
   .description('cli tool for unicorn-plus-plus')
   .command('new:simple [name]', 'create a new simple project', { executableFile: 'upp-new-executable' })
   .command('new:executable [name]', 'create a new executable project with namespace', { executableFile: 'upp-new-executable' })
+  .command('new:interface [name]', 'create a new interface project with namespace', { executableFile: 'upp-new-interface' })
   .parse(process.argv);
