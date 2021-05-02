@@ -54,9 +54,9 @@ The main feature is the **upp.json** configuration file. At the moment, the avai
 Here is the list of all commands available:
 - `new:simple [name]`<br>
   Create a new simple project. Use this if you want to build a simple main to test stuff.
-- `new:executable [name]`<br>
+- `new:executable [name] -n [namespace]`<br>
   Create a new executable project with namespace. Use this for standard project. You must specify a namespace to avoid problems with hierarchy. 
-- `new:interface [name]`<br>
+- `new:interface [name] -n [namespace]`<br>
   Create a new interface project with namespace. Similar to executable but you need this version if you use full templates and you don't have .cpp file to compile.
 - `help [command]`<br>
   Display help for command.
